@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="show_sql">true</property>
+
+        <!-- Hibernate help us to create table which is mapped to a Model object. Setting this property
+        to create will create the table if the model is not present in the database-->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+        <!-- Named Entity <Model Class> -->
+<!--        <mapping class="com.atom.hibernatebasics.dto.UserDetails"/>-->
+<!--        <mapping class="com.atom.hibernatebasics.dto.ByNameAttribute"/>-->
+<!--        <mapping class="com.atom.hibernatebasics.dto.annotation.TableAnnotation"/>-->
+<!--        <mapping class="com.atom.hibernatebasics.dto.annotation.Basic$Transient$Temporal$Lob"/>-->
+<!--        <mapping class="com.atom.hibernatebasics.dto.fetch.User"/>-->
+        <mapping class="com.atom.hibernatebasics.embed.Employee"/>
+
+    </session-factory>
+</hibernate-configuration>
