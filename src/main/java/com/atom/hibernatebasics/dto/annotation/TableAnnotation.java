@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
  *
  * If we use @Entity(name="") and @Table(name="") then a table will be created with the value of name in Table annotation
  *  and entity name will be value of the name attribute of Entity annotation.
- *
+ * @Entity is used in Hibernate Query Language (HQL)
  */
 @Entity
 @Table(name="userdetails")

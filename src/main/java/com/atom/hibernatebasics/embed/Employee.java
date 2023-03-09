@@ -3,6 +3,8 @@ package com.atom.hibernatebasics.embed;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Employee {
@@ -10,6 +12,11 @@ public class Employee {
     @EmbeddedId
     @Id
     private CustomPrimaryKey id;
+
+/*    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;*/
+
     private String name;
     private String phoneNumber;
 
@@ -31,6 +38,15 @@ public class Employee {
             @AttributeOverride(name = "state", column = @Column(name = "office_state"))})
     private Address officeAddress;
 
+    /**
+     * It creates a seprate table name employee_otherAddresses and same the data. A foreign key is generated which mapped in employee table.
+     * the new table name which is created is Employee_otherAddresses
+     *
+     * To change the name of the new table we can use @JOIN_TABLE
+     */
+    @ElementCollection
+    @JoinTable(name="USER_ADDRESS")
+    private Set<Address> otherAddresses = new HashSet<>();
     public Address getOfficeAddress() {
         return officeAddress;
     }
@@ -77,5 +93,13 @@ public class Employee {
 
     public void setHomeAddress(Address homeAddress) {
         this.homeAddress = homeAddress;
+    }
+
+    public Set<Address> getOtherAddresses() {
+        return otherAddresses;
+    }
+
+    public void setOtherAddresses(Set<Address> otherAddresses) {
+        this.otherAddresses = otherAddresses;
     }
 }

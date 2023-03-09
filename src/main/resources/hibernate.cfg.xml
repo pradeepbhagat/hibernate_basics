@@ -22,7 +22,10 @@
 <!--        <mapping class="com.atom.hibernatebasics.dto.annotation.TableAnnotation"/>-->
 <!--        <mapping class="com.atom.hibernatebasics.dto.annotation.Basic$Transient$Temporal$Lob"/>-->
 <!--        <mapping class="com.atom.hibernatebasics.dto.fetch.User"/>-->
-        <mapping class="com.atom.hibernatebasics.embed.Employee"/>
+<!--        <mapping class="com.atom.hibernatebasics.embed.Employee"/>-->
+<!--        <mapping class="com.atom.hibernatebasics.embed.Student"/>-->
+        <mapping class="com.atom.hibernatebasics.relationship.onetoone.Employee"/>
+        <mapping class="com.atom.hibernatebasics.relationship.onetoone.Locker"/>
 
     </session-factory>
 </hibernate-configuration>

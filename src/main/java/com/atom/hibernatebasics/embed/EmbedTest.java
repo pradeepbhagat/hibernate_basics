@@ -32,6 +32,9 @@ public class EmbedTest {
         testEmp1.setDateOfBirth(new Date("13/02/1988"));
         testEmp1.setPhoneNumber("9004460339");
 
+        testEmp1.getOtherAddresses().add(testEmp1HomeAddress);
+        testEmp1.getOtherAddresses().add(testEmp1OfficeAddress);
+
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
