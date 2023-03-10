@@ -1,7 +1,10 @@
-package com.atom.hibernatebasics.relationship.onetoone;
+package com.atom.hibernatebasics.relationship;
 
 
 import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Employee {
@@ -22,6 +25,14 @@ public class Employee {
     @JoinColumn(name = "locker_Id", referencedColumnName = "id")
     private Locker locker;
 
+
+    /**
+     * Employee can have many vehicles, the relationship is 1 - many
+     */
+    @OneToMany
+    @JoinTable(name = "emp_veh", joinColumns = @JoinColumn(name="emp_id"),
+            inverseJoinColumns = @JoinColumn(name = "veh_id"))
+    private Set<Vehicle> vehicles = new HashSet<>();
     public Long getId() {
         return id;
     }
@@ -44,5 +55,14 @@ public class Employee {
 
     public void setLocker(Locker locker) {
         this.locker = locker;
+    }
+
+    public Set<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public void addVehicle(Vehicle vehicle) {
+        vehicle.setEmployee(this);
+        this.vehicles.add(vehicle);
     }
 }

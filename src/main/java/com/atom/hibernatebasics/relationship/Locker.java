@@ -1,4 +1,4 @@
-package com.atom.hibernatebasics.relationship.onetoone;
+package com.atom.hibernatebasics.relationship;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

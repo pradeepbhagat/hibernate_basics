@@ -24,8 +24,9 @@
 <!--        <mapping class="com.atom.hibernatebasics.dto.fetch.User"/>-->
 <!--        <mapping class="com.atom.hibernatebasics.embed.Employee"/>-->
 <!--        <mapping class="com.atom.hibernatebasics.embed.Student"/>-->
-        <mapping class="com.atom.hibernatebasics.relationship.onetoone.Employee"/>
-        <mapping class="com.atom.hibernatebasics.relationship.onetoone.Locker"/>
+        <mapping class="com.atom.hibernatebasics.relationship.Employee"/>
+        <mapping class="com.atom.hibernatebasics.relationship.Locker"/>
+        <mapping class="com.atom.hibernatebasics.relationship.Vehicle"/>
 
     </session-factory>
 </hibernate-configuration>
