@@ -27,6 +27,8 @@
         <mapping class="com.atom.hibernatebasics.relationship.Employee"/>
         <mapping class="com.atom.hibernatebasics.relationship.Locker"/>
         <mapping class="com.atom.hibernatebasics.relationship.Vehicle"/>
+        <mapping class="com.atom.hibernatebasics.relationship.Project"/>
+        <mapping class="com.atom.hibernatebasics.relationship.Department"/>
 
     </session-factory>
 </hibernate-configuration>

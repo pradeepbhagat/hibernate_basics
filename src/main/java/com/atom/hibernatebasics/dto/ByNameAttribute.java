@@ -3,7 +3,7 @@ package com.atom.hibernatebasics.dto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
+//Revision date - 14/03/2023
 @Entity(name = "USER_DETAILS") //Entity name will be changed to USER_DETAILS from ByNameAttribute
 public class ByNameAttribute {
     @Id

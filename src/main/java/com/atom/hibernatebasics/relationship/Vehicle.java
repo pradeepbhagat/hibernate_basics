@@ -12,6 +12,7 @@ public class Vehicle {
 
     /**
      * Many vehicles can have one Employee, i.e. the relationship is many - 1
+     * It will create a column in the vehicle table and will hold the employee id.
      */
     @ManyToOne
     @JoinColumn(name = "emp_id")

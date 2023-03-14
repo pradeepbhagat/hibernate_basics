@@ -21,6 +21,16 @@ public class RelationshipTest {
         employee.addVehicle(vehicle1);
         employee.addVehicle(vehicle2);
 
+        Department department = new Department();
+        department.setName("Department 1");
+        department.addEmployee(employee);
+
+        Project project = new Project();
+        project.setName("Project 1");
+        project.addEmployee(employee);
+
+        employee.addProject(project);
+
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -35,6 +45,9 @@ public class RelationshipTest {
          */
         session.persist(vehicle1);
         session.persist(vehicle2);
+        session.persist(department);
+        session.persist(project);
+
         session.getTransaction().commit();
         session.close();
     }

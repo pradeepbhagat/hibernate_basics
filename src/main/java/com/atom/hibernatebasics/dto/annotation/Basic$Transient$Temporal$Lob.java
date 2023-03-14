@@ -3,14 +3,14 @@ package com.atom.hibernatebasics.dto.annotation;
 import jakarta.persistence.*;
 
 import java.util.Date;
-
+//Revision date - 13/03/2023
 @Entity(name = "Annotation")
 public class Basic$Transient$Temporal$Lob {
     /**
      * Basic is used to map the java data type to the SQL data type like int/long will be converted to Integer in SQL. String will be converted to varchar in SQL
      * it has two option OPTIONAL and FETCH.
      * OPTIONAL is a boolean which is used to restrict null type. If set to false NULL will not be allowed, by default it is true.
-     * FETCH is used to get the value EAGER or LAZY. By default it is eager.
+     * FETCH is used to get the value EAGER or LAZY. By default, it is eager.
      */
     @Id
     @Basic
@@ -31,8 +31,8 @@ public class Basic$Transient$Temporal$Lob {
     private Date date;
 
     /**
-     * By default string is mapped with varchar of size 255 if we want to save a large data then LOB is used. LOB is of two types BLOB(Bytes) and CLOB (Character)
-     * Hibernate handles automatically the type of LOB to use as per the datatype. For Character it use CLOB and for bytes BLOB.
+     * By default, string is mapped with varchar of size 255 if we want to save a large data then LOB is used. LOB is of two types BLOB(Bytes) and CLOB (Character)
+     * Hibernate handles automatically the type of LOB to use as per the datatype. For Character, it uses CLOB and for bytes BLOB.
      */
     @Lob
     private String description;
