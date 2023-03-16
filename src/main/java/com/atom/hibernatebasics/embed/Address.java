@@ -3,6 +3,7 @@ package com.atom.hibernatebasics.embed;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
+//Revision date - 14/03/2023
 @Embeddable
 public class Address {
     private String street;

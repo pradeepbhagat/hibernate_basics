@@ -4,6 +4,7 @@ import jakarta.persistence.Embeddable;
 
 import java.io.Serializable;
 
+//Revision date - 14/03/2023
 @Embeddable
 public class CustomPrimaryKey implements Serializable {
     private int firstId;

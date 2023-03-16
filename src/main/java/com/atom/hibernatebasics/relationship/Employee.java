@@ -2,6 +2,8 @@ package com.atom.hibernatebasics.relationship;
 
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,6 +19,12 @@ public class Employee {
      * Cascading -
      * Lets take the example of employee and locker. Locker will not exist's without employee. If employee is deleted from DB then locker should also be deleted.
      * This can be achieved using cascade
+     * Cascade type is of 4 types
+     * PERSIST: CASCADE for save operation
+     * REMOVE: CASCADE for delete operation
+     * REFRESH:
+     * DETACH:
+     * ALL:
      */
     @OneToOne(cascade = CascadeType.ALL)
     /**
@@ -31,11 +39,16 @@ public class Employee {
      * The below one to many implementation will create a table named emp_veh with column employee_id and veh_id
      *
      * WHAT IF WE DO NOT WANT TO HAVE A THIRD TABLE? REFER Project
+     *
      */
     @OneToMany
     //optional
     @JoinTable(name = "emp_veh", joinColumns = @JoinColumn(name="employee_id"),
             inverseJoinColumns = @JoinColumn(name = "veh_id"))
+    /**
+     * If we do not set the vehicles hibernate will throw an exception. To ignore that exception @NotFound annotation is used.
+     */
+    @NotFound(action = NotFoundAction.IGNORE)
     private Set<Vehicle> vehicles = new HashSet<>();
 
     /**
