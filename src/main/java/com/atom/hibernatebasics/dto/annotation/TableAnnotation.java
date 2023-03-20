@@ -3,7 +3,7 @@ package com.atom.hibernatebasics.dto.annotation;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-//Revision date - 13/03/2023
+//Revision date - 16/03/2023
 /**
  * Difference between entity and table is-
  * First understand the default behaviour

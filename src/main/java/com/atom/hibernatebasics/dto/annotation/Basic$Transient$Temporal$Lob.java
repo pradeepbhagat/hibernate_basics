@@ -3,7 +3,7 @@ package com.atom.hibernatebasics.dto.annotation;
 import jakarta.persistence.*;
 
 import java.util.Date;
-//Revision date - 13/03/2023
+//Revision date - 16/03/2023
 @Entity(name = "Annotation")
 public class Basic$Transient$Temporal$Lob {
     /**

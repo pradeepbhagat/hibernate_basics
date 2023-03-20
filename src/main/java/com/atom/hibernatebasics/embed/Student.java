@@ -22,19 +22,30 @@ public class Student {
     private Date dateOfBirth;
 
     /**
-     * It creates a seprate table name employee_otherAddresses and same the data. A foreign key is generated which mapped in student table.
-     * the new table name which is created is Student_otherAddresses
+     * It creates a separate table name employee_otherAddresses and save the data.
+     * A foreign key student_id is created in employee_otherAddress.
      *
      * To change the name of the new table we can use @JOIN_TABLE
      *
      * To change the name of the FK use joinColumns = @JoinColumn(name = "student_id")
      */
     @ElementCollection
-    @JoinTable(name="STUDENT_ADDRESSES", joinColumns = @JoinColumn(name = "student_id"))
-    @GenericGenerator(name = "my-hilo", strategy = "hilo")
+    /**
+     * The default table created by @ElementCollection is employee_otherAddresses
+     * @JointTable(name="STUDENT_ADDERESSES") will change the name from  employee_otherAddresses to STUDENT_ADDERESSES
+     * The default foreign key column name is student_id in the employee_otherAddresses.
+     * To change the name of the foreign key column we use  joinColumns = @JoinColumn(name = "changed_student_id") of @JoinTable
+     */
+    @JoinTable(name="STUDENT_ADDRESSES", joinColumns = @JoinColumn(name = "changed_student_id"))
+//    @GenericGenerator(name = "my-hilo", strategy = "hilo")
 //    @CollectionId(column = @Column(name="ADDRESS_ID"), generator = "my-hilo", type=@Type(type="long"))
     private Collection<Address> otherAddresses = new ArrayList<>();
 
+    /**
+     * When we get the Student value the @ElementCollection is not retrieved until we call the method  getEagerFetchAddresses().
+     * By default, the fetch type is LAZY.
+     * To get the eagerFetchAddresses automatically when the student object is retrieved set the fetch type to EAGER.
+     */
     @ElementCollection(fetch = FetchType.EAGER)
     private Collection<Address> eagerFetchAddresses = new ArrayList<>();
     public String getName() {
