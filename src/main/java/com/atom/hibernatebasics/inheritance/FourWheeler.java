@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 /**
  * FourWheeler table will not be created.
  * Vehicle table will have tyrePressure as a column.
- * DTYPE column will be created in Vehicle that will have FourWheeler as a value.
+ * DTYPE (DISCRIMINATOR) column will be created in Vehicle that will have FourWheeler as a value.
  */
 @Entity
 public class FourWheeler extends Vehicle{

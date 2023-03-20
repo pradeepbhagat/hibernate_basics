@@ -1,13 +1,10 @@
-package com.atom.hibernatebasics.inheritance;
+package com.atom.hibernatebasics.inheritance.singleTable;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
-/**
- * TwoWheeler table will not be created. Parent class, Vehicle will have two column frontTyrePressure and backTyrePressure.
- *
- * A new column will be added named DTYPE (DISCRIMINATOR) which will hold the class name i.e. TwoWheeler
- */
 @Entity
+@DiscriminatorValue("Bike")
 public class TwoWheeler extends Vehicle{
     private int frontTyrePressure;
     private int backTyrePressure;

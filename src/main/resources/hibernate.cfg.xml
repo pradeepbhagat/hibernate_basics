@@ -15,17 +15,21 @@
         <!-- Hibernate help us to create table which is mapped to a Model object. Setting this property
         to create will create the table if the model is not present in the database-->
         <property name="hibernate.hbm2ddl.auto">create</property>
+        <mapping class="com.atom.hibernatebasics.inheritance.singleTable.Vehicle"/>
+        <mapping class="com.atom.hibernatebasics.inheritance.singleTable.TwoWheeler"/>
 
-        <mapping class="com.atom.hibernatebasics.inheritance.Vehicle"/>
-        <mapping class="com.atom.hibernatebasics.inheritance.TwoWheeler"/>
-        <mapping class="com.atom.hibernatebasics.inheritance.FourWheeler"/>
+        <!--        <mapping class="com.atom.hibernatebasics.inheritance.Vehicle"/>-->
+        <!--        <mapping class="com.atom.hibernatebasics.inheritance.TwoWheeler"/>-->
+        <!--        <mapping class="com.atom.hibernatebasics.inheritance.FourWheeler"/>-->
+
+
         <!-- Named Entity <Model Class> -->
-<!--        <mapping class="com.atom.hibernatebasics.dto.UserDetails"/>-->
-<!--        <mapping class="com.atom.hibernatebasics.dto.ByNameAttribute"/>-->
-<!--        <mapping class="com.atom.hibernatebasics.dto.annotation.TableAnnotation"/>-->
-<!--        <mapping class="com.atom.hibernatebasics.dto.annotation.Basic$Transient$Temporal$Lob"/>-->
-<!--        <mapping class="com.atom.hibernatebasics.dto.fetch.User"/>-->
-<!--        <mapping class="com.atom.hibernatebasics.embed.Employee"/>-->
+        <!--        <mapping class="com.atom.hibernatebasics.dto.UserDetails"/>-->
+        <!--        <mapping class="com.atom.hibernatebasics.dto.ByNameAttribute"/>-->
+        <!--        <mapping class="com.atom.hibernatebasics.dto.annotation.TableAnnotation"/>-->
+        <!--        <mapping class="com.atom.hibernatebasics.dto.annotation.Basic$Transient$Temporal$Lob"/>-->
+        <!--        <mapping class="com.atom.hibernatebasics.dto.fetch.User"/>-->
+        <!--        <mapping class="com.atom.hibernatebasics.embed.Employee"/>-->
         <mapping class="com.atom.hibernatebasics.embed.Student"/>
 
 
