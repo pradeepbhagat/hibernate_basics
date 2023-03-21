@@ -14,9 +14,14 @@
 
         <!-- Hibernate help us to create table which is mapped to a Model object. Setting this property
         to create will create the table if the model is not present in the database-->
+
         <property name="hibernate.hbm2ddl.auto">create</property>
-        <mapping class="com.atom.hibernatebasics.inheritance.singleTable.Vehicle"/>
-        <mapping class="com.atom.hibernatebasics.inheritance.singleTable.TwoWheeler"/>
+        <mapping class="com.atom.hibernatebasics.inheritance.TablePerClass.Vehicle"/>
+        <mapping class="com.atom.hibernatebasics.inheritance.TablePerClass.TwoWheeler"/>
+
+
+        <!--<mapping class="com.atom.hibernatebasics.inheritance.singleTable.Vehicle"/>
+        <mapping class="com.atom.hibernatebasics.inheritance.singleTable.TwoWheeler"/>-->
 
         <!--        <mapping class="com.atom.hibernatebasics.inheritance.Vehicle"/>-->
         <!--        <mapping class="com.atom.hibernatebasics.inheritance.TwoWheeler"/>-->
