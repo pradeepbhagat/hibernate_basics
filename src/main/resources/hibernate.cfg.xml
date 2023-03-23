@@ -16,8 +16,12 @@
         to create will create the table if the model is not present in the database-->
 
         <property name="hibernate.hbm2ddl.auto">create</property>
-        <mapping class="com.atom.hibernatebasics.inheritance.TablePerClass.Vehicle"/>
-        <mapping class="com.atom.hibernatebasics.inheritance.TablePerClass.TwoWheeler"/>
+
+        <mapping class="com.atom.hibernatebasics.inheritance.joined.Vehicle"/>
+        <mapping class="com.atom.hibernatebasics.inheritance.joined.TwoWheeler"/>
+
+<!--        <mapping class="com.atom.hibernatebasics.inheritance.TablePerClass.Vehicle"/>
+        <mapping class="com.atom.hibernatebasics.inheritance.TablePerClass.TwoWheeler"/>-->
 
 
         <!--<mapping class="com.atom.hibernatebasics.inheritance.singleTable.Vehicle"/>
@@ -35,14 +39,14 @@
         <!--        <mapping class="com.atom.hibernatebasics.dto.annotation.Basic$Transient$Temporal$Lob"/>-->
         <!--        <mapping class="com.atom.hibernatebasics.dto.fetch.User"/>-->
         <!--        <mapping class="com.atom.hibernatebasics.embed.Employee"/>-->
-        <mapping class="com.atom.hibernatebasics.embed.Student"/>
+<!--        <mapping class="com.atom.hibernatebasics.embed.Student"/>-->
 
 
-        <!--<mapping class="com.atom.hibernatebasics.relationship.Employee"/>
-        <mapping class="com.atom.hibernatebasics.relationship.Locker"/>
-        <mapping class="com.atom.hibernatebasics.relationship.Vehicle"/>
-        <mapping class="com.atom.hibernatebasics.relationship.Project"/>
-        <mapping class="com.atom.hibernatebasics.relationship.Department"/>-->
+<!--        <mapping class="com.atom.hibernatebasics.relationship.Employee"/>-->
+<!--        <mapping class="com.atom.hibernatebasics.relationship.Locker"/>-->
+<!--        <mapping class="com.atom.hibernatebasics.relationship.Vehicle"/>-->
+<!--        <mapping class="com.atom.hibernatebasics.relationship.Project"/>-->
+<!--        <mapping class="com.atom.hibernatebasics.relationship.Department"/>-->
 
 
     </session-factory>

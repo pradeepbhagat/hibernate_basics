@@ -15,7 +15,9 @@ public class Vehicle {
      * It will create a column in the vehicle table and will hold the employee id.
      */
     @ManyToOne
-    @JoinColumn(name = "emp_id")
+//    @JoinColumn(name = "emp_id")
+//        @JoinTable(name = "emp_veh", joinColumns = @JoinColumn(name="employee_id"),
+//            inverseJoinColumns = @JoinColumn(name = "veh_id"))
     private Employee employee;
     public String getName() {
         return name;

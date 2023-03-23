@@ -38,13 +38,14 @@ public class Employee {
      * Employee can have many vehicles, the relationship is 1 - many
      * The below one to many implementation will create a table named emp_veh with column employee_id and veh_id
      *
-     * WHAT IF WE DO NOT WANT TO HAVE A THIRD TABLE? REFER Project
+     * WHAT IF WE DO NOT WANT TO HAVE A THIRD TABLE? REFER Department
      *
      */
     @OneToMany
     //optional
     @JoinTable(name = "emp_veh", joinColumns = @JoinColumn(name="employee_id"),
             inverseJoinColumns = @JoinColumn(name = "veh_id"))
+//    @JoinColumn(name = "emp_id")
     /**
      * If we do not set the vehicles hibernate will throw an exception. To ignore that exception @NotFound annotation is used.
      */
