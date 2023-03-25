@@ -67,6 +67,9 @@ public class Employee {
 
 
     /**
+     * One Project can have many employees
+     * One Employee can be part of many projects
+     *
      * Default behaviour of @ManyToMany is to create two table eg. for the below relationship employee_project table is created and project_employee table is created.
      * Instead of creating two tables we can have only table by using
      *@JoinTable(name = "emp_project", joinColumns = @JoinColumn(name = "emp_id"), inverseJoinColumns = @JoinColumn(name = "project_id"))

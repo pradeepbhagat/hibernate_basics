@@ -17,8 +17,10 @@
 
         <property name="hibernate.hbm2ddl.auto">create</property>
 
-        <mapping class="com.atom.hibernatebasics.inheritance.joined.Vehicle"/>
-        <mapping class="com.atom.hibernatebasics.inheritance.joined.TwoWheeler"/>
+        <mapping class="com.atom.hibernatebasics.crud.Employee"/>
+
+<!--        <mapping class="com.atom.hibernatebasics.inheritance.joined.Vehicle"/>
+        <mapping class="com.atom.hibernatebasics.inheritance.joined.TwoWheeler"/>-->
 
 <!--        <mapping class="com.atom.hibernatebasics.inheritance.TablePerClass.Vehicle"/>
         <mapping class="com.atom.hibernatebasics.inheritance.TablePerClass.TwoWheeler"/>-->
