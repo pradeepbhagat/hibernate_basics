@@ -18,7 +18,7 @@ public class CrudTest {
         employeeDao.updateEmployeeName(4, "New name", session);
         System.out.println("Employee details after update: "+employeeDao.getEmployee(4, session).toString());
 
-        //Update
+        //Delete
         employeeDao.deleteEmployee(4, session);
 
         session.getTransaction().commit();
