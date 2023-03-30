@@ -43,8 +43,8 @@ public class Employee {
      */
     @OneToMany
     //optional
-    @JoinTable(name = "emp_veh", joinColumns = @JoinColumn(name="employee_id"),
-            inverseJoinColumns = @JoinColumn(name = "veh_id"))
+//    @JoinTable(name = "emp_veh", joinColumns = @JoinColumn(name="employee_id"),
+//            inverseJoinColumns = @JoinColumn(name = "veh_id"))
 //    @JoinColumn(name = "emp_id")
     /**
      * If we do not set the vehicles hibernate will throw an exception. To ignore that exception @NotFound annotation is used.
