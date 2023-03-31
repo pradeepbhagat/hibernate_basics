@@ -16,7 +16,9 @@
         to create will create the table if the model is not present in the database-->
 
         <property name="hibernate.hbm2ddl.auto">create</property>
-        <mapping class="com.atom.hibernatebasics.lifecycle.Employee"/>
+        <mapping class="com.atom.hibernatebasics.hql.Employee"/>
+
+<!--        <mapping class="com.atom.hibernatebasics.lifecycle.Employee"/>-->
         <!--        <mapping class="com.atom.hibernatebasics.crud.Employee"/>-->
 
         <!--        <mapping class="com.atom.hibernatebasics.inheritance.joined.Vehicle"/>
