@@ -23,6 +23,10 @@ public class HqlTest {
 
         employeeDao.twoColumn(session);
 
+        employeeDao.maxId(session);
+
+        employeeDao.mapOfColumn(session);
+
         session.getTransaction().commit();
         session.close();
     }

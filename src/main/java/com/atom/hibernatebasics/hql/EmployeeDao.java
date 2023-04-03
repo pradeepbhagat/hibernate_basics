@@ -3,8 +3,7 @@ package com.atom.hibernatebasics.hql;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class EmployeeDao {
     public void fillEmployeeData(Session session) {
@@ -12,6 +11,7 @@ public class EmployeeDao {
         for(int i=1; i<= 10 ; i++){
             Employee employee = new Employee();
             employee.setName("Employee "+i);
+            employee.setDepartment("Department "+ i % 2);
             session.persist(employee);
         }
     }
@@ -27,7 +27,8 @@ public class EmployeeDao {
         Iterator iterator = list.iterator();
         while (iterator.hasNext()){
             Employee employee = (Employee) iterator.next();
-            System.out.print(employee.getName()+",");
+            System.out.print("["+employee.getName()+",");
+            System.out.print(employee.getDepartment()+"]");
         }
         System.out.println("");
         System.out.println("Size: "+list.size());
@@ -52,7 +53,7 @@ public class EmployeeDao {
     public void oneColumn(Session session) {
         System.out.println("--oneColumn-");
         Query query = session.createQuery("select name from Employee ");
-        List<String> list = query.list();
+        List<String> list = query.list(); // It will give a list of strings
         for (String name: list){
             System.out.print(name+",");
         }
@@ -61,7 +62,26 @@ public class EmployeeDao {
     }
 
     public void twoColumn(Session session) {
-        Query query = session.createQuery("select id, name from Employee ");
-        query.list();
+        Query query = session.createQuery("select name, department from Employee ");
+        List<Object[]> employees = query.list();
+        for (Object[] instance: employees){
+            System.out.print("["+instance[0]+","+instance[1]+"]");
+        }
+    }
+
+    public void maxId(Session session) {
+        System.out.println("-- maxId--");
+        Query query = session.createQuery("select max(id) from Employee");
+        List list = query.list();
+        System.out.println("Max id: "+list.get(0));
+    }
+
+    public void mapOfColumn(Session session) {
+        System.out.println("--mapOfColumn--");
+        Query query = session.createQuery("select new map(id, name) from Employee");
+        List<Map> list = query.list();
+        for (Map map : list){
+            System.out.print(""+map);
+        }
     }
 }
