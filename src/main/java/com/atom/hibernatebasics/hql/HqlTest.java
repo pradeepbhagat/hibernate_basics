@@ -17,6 +17,12 @@ public class HqlTest {
 
         employeeDao.whereQuery(session);
 
+        employeeDao.pagination(session);
+
+        employeeDao.oneColumn(session);
+
+        employeeDao.twoColumn(session);
+
         session.getTransaction().commit();
         session.close();
     }

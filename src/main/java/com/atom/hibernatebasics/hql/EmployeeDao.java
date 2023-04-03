@@ -25,14 +25,12 @@ public class EmployeeDao {
 
     private static void printEmployeeList(List list) {
         Iterator iterator = list.iterator();
-        int i=0;
         while (iterator.hasNext()){
             Employee employee = (Employee) iterator.next();
             System.out.print(employee.getName()+",");
-            i++;
         }
         System.out.println("");
-        System.out.println("Size: "+ i);
+        System.out.println("Size: "+list.size());
     }
 
     public void whereQuery(Session session) {
@@ -40,5 +38,30 @@ public class EmployeeDao {
         Query query = session.createQuery("from Employee where id > 5");
         List list = query.list();
         printEmployeeList(list);
+    }
+
+    public void pagination(Session session) {
+        System.out.println("--Pagination-");
+        Query query = session.createQuery("from Employee ");
+        query.setFirstResult(2);// start from the nth record
+        query.setMaxResults(5); //Total number of record to be fetched
+        List<Employee> list = query.list();
+        printEmployeeList(list);
+    }
+
+    public void oneColumn(Session session) {
+        System.out.println("--oneColumn-");
+        Query query = session.createQuery("select name from Employee ");
+        List<String> list = query.list();
+        for (String name: list){
+            System.out.print(name+",");
+        }
+        System.out.println("");
+        System.out.println("Size: "+ list.size());
+    }
+
+    public void twoColumn(Session session) {
+        Query query = session.createQuery("select id, name from Employee ");
+        query.list();
     }
 }

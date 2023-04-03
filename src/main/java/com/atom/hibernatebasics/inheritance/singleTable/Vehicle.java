@@ -1,5 +1,6 @@
 package com.atom.hibernatebasics.inheritance.singleTable;
 
+
 import jakarta.persistence.*;
 
 @Entity
