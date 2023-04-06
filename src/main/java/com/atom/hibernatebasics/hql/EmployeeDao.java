@@ -1,6 +1,7 @@
 package com.atom.hibernatebasics.hql;
 
 import org.hibernate.Session;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 
 import java.util.*;
@@ -97,6 +98,22 @@ public class EmployeeDao {
         System.out.println("\n--parameterBindingWithName--");
         Query query = session.createQuery("from Employee where id > :userId ");
         query.setParameter("userId", 5);
+        List list = query.list();
+        printEmployeeList(list);
+    }
+
+    public void namedQuery(Session session){
+        System.out.println("\n--namedQuery--");
+        Query namedQuery = session.getNamedQuery("Employee.byId");
+        namedQuery.setParameter(1,3);
+        List list = namedQuery.list();
+        printEmployeeList(list);
+    }
+
+    public void namedNativeQuery(Session session) {
+        System.out.println("\n--namedNativeQuery--");
+        Query query = session.getNamedQuery("Employee.byName");
+        query.setParameter(1, "Employee 5");
         List list = query.list();
         printEmployeeList(list);
     }

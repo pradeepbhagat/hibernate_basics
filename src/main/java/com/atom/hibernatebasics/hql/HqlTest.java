@@ -31,6 +31,10 @@ public class HqlTest {
 
         employeeDao.parameterBindingWithName(session);
 
+        employeeDao.namedQuery(session);
+
+        employeeDao.namedNativeQuery(session);
+
         session.getTransaction().commit();
         session.close();
     }
