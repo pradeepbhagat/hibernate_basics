@@ -27,6 +27,10 @@ public class HqlTest {
 
         employeeDao.mapOfColumn(session);
 
+        employeeDao.parameterBindingWithIndex(session);
+
+        employeeDao.parameterBindingWithName(session);
+
         session.getTransaction().commit();
         session.close();
     }

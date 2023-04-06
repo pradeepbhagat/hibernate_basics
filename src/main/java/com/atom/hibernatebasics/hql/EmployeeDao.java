@@ -84,4 +84,20 @@ public class EmployeeDao {
             System.out.print(""+map);
         }
     }
+
+    public void parameterBindingWithIndex(Session session) {
+        System.out.println("\n--parameterBinding--");
+        Query query = session.createQuery("from Employee where id > ?1 ");
+        query.setParameter(1,3);// 1 index of the parameter and 3 is the value of ?
+        List list = query.list();
+        printEmployeeList(list);
+    }
+
+    public void parameterBindingWithName(Session session) {
+        System.out.println("\n--parameterBindingWithName--");
+        Query query = session.createQuery("from Employee where id > :userId ");
+        query.setParameter("userId", 5);
+        List list = query.list();
+        printEmployeeList(list);
+    }
 }
