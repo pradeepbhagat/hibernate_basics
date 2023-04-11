@@ -17,6 +17,7 @@ public class CriteriaTest {
         employeeDao.greaterThanExample(session);
         employeeDao.likeExample(session);
         employeeDao.betweenExample(session);
+        employeeDao.orExample(session);
 
         session.getTransaction().commit();
         session.close();

@@ -88,4 +88,16 @@ public class EmployeeDao {
         List<Employee> list = query.list();
         printEmployeeList(list);
     }
+
+    public void orExample(Session session) {
+        System.out.println("\n--orExample--");
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<Employee> criteriaQuery = criteriaBuilder.createQuery(Employee.class);
+        Root<Employee> from = criteriaQuery.from(Employee.class);
+        criteriaQuery.select(from).where(criteriaBuilder.or(criteriaBuilder.between(from.get("id"),1,3),
+                criteriaBuilder.between(from.get("id"),7,9)));
+        Query<Employee> query = session.createQuery(criteriaQuery);
+        List<Employee> list = query.list();
+        printEmployeeList(list);
+    }
 }
