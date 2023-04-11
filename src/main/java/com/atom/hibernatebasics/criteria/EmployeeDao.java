@@ -55,4 +55,37 @@ public class EmployeeDao {
         List<Employee> list = query.list();
         printEmployeeList(list);
     }
+    public void greaterThanExample(Session session) {
+        System.out.println("\n--greaterThanExample--");
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<Employee> criteriaQuery = criteriaBuilder.createQuery(Employee.class);
+        Root<Employee> from = criteriaQuery.from(Employee.class);
+        criteriaQuery.select(from).where(criteriaBuilder.greaterThan(from.get("id"),5));
+        Query<Employee> query = session.createQuery(criteriaQuery);
+        List<Employee> list = query.list();
+        printEmployeeList(list);
+    }
+
+
+    public void likeExample(Session session) {
+        System.out.println("\n--likeExample--");
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<Employee> criteriaQuery = criteriaBuilder.createQuery(Employee.class);
+        Root<Employee> from = criteriaQuery.from(Employee.class);
+        criteriaQuery.select(from).where(criteriaBuilder.like(from.get("name"), "Employee 1%"));
+        Query<Employee> query = session.createQuery(criteriaQuery);
+        List<Employee> list = query.list();
+        printEmployeeList(list);
+    }
+    public void betweenExample(Session session) {
+        System.out.println("\n--betweenExample--");
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<Employee> criteriaQuery = criteriaBuilder.createQuery(Employee.class);
+        Root<Employee> from = criteriaQuery.from(Employee.class);
+        criteriaQuery.select(from).where(criteriaBuilder.between(from.get("id"),2,7));
+
+        Query<Employee> query = session.createQuery(criteriaQuery);
+        List<Employee> list = query.list();
+        printEmployeeList(list);
+    }
 }
