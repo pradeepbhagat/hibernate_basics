@@ -17,13 +17,18 @@
         <property name="cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
         <property name="cache.ehcache.missing_cache_strategy">create</property>
         <!-- XXXXXXX -->
+        <!-- Query cache provider -->
+        <!-- Along with enabling the second level cache -->
+        <property name="cache.use_query_cache">true</property>
 
         <!-- Hibernate help us to create table which is mapped to a Model object. Setting this property
         to create will create the table if the model is not present in the database-->
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="com.atom.hibernatebasics.cache.secondlevel.Employee"/>
+        <mapping class="com.atom.hibernatebasics.cache.secondlevel.querycache.Employee"/>
+
+<!--        <mapping class="com.atom.hibernatebasics.cache.secondlevel.Employee"/>-->
 <!--        <mapping class="com.atom.hibernatebasics.cache.Employee"/>-->
 <!--        <mapping class="com.atom.hibernatebasics.criteria.projection.Employee"/>-->
 <!--        <mapping class="com.atom.hibernatebasics.criteria.Employee"/>-->
